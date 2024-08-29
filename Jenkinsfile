@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Clone the GitHub repository
-                git 'https://github.com/d-Sujeeth/Jenkins-Pipeline.git'
+                git 'https://github.com/d-Sujeeth/Jenkins-Pipeline/index.html'
             }
         }
 
