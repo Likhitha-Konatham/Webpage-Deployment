@@ -8,14 +8,15 @@ pipeline {
         }
         stage('Build') {
             steps {
-                // Add build commands here
                 echo 'Building...'
+                // If you need to perform build steps, add them here
             }
         }
         stage('Deploy') {
             steps {
-                // Add deployment commands here
                 echo 'Deploying...'
+                // Copy the index.html to the Apache web server directory
+                sh 'cp index.html /var/www/html/'
             }
         }
     }
