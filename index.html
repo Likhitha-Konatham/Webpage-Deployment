@@ -3,364 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D Sujeeth - Cloud Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Greeting</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-        header {
-            background-color: #f0e5d8; /* Sandal color */
-            padding: 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #333;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-        }
-        .section {
-            background: #fff;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .section h2 {
-            border-bottom: 2px solid #f0e5d8; /* Sandal color */
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-        }
-        .section p {
-            margin: 0;
-            line-height: 1.6;
-        }
-        .contact-info {
-            text-align: center;
-        }
-        .contact-info a {
-            color: #333;
-            text-decoration: none;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        .contact-info i {
-            margin-right: 8px;
-        }
-        .profile-pic {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 3px solid #333;
-        }
-        .card {
-            background: #fff;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        .resume-footer {
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background: #f0e5d8; /* Sandal color */
-            border-radius: 8px;
-        }
-        .side-menu {
+            background-image: url('https://www.example.com/sandal-background.jpg'); /* Replace with your sandal background image URL */
+            background-size: cover;
+            background-position: center;
+            font-family: 'Arial', sans-serif;
             display: flex;
-            justify-content: space-around;
-            background: #f0e5d8; /* Sandal color */
-            padding: 10px 0;
-            border-bottom: 2px solid #ddd;
-        }
-        .side-menu a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            transition: color 0.3s ease;
-            display: flex;
+            justify-content: center;
             align-items: center;
-        }
-        .side-menu a i {
-            margin-right: 8px;
-        }
-        .side-menu a:hover {
-            color: #555;
-        }
-        .progress {
-            background: #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-            height: 20px;
-            margin-bottom: 10px;
-        }
-        .progress-bar {
-            background: #f0e5d8;
-            height: 100%;
-            transition: width 0.4s ease;
-        }
-        .skill-graph {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .skill {
-            width: 30%;
-        }
-        .skill h3 {
+            height: 100vh;
             margin: 0;
-            font-size: 1.2em;
+            color: #fff;
         }
-        .skill .progress {
-            margin-top: 5px;
-        }
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #f0e5d8; /* Sandal color */
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            cursor: pointer;
-            display: none;
-        }
-        .back-to-top:hover {
-            background-color: #e0d4c4;
-        }
-        .testimonials {
-            background: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .testimonials blockquote {
-            border-left: 4px solid #f0e5d8; /* Sandal color */
-            padding-left: 20px;
-            margin: 0;
-            font-style: italic;
-        }
-        .download-resume {
+        .message {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            padding: 20px 40px;
             text-align: center;
-            margin-top: 20px;
+            font-size: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: slideIn 1s ease-out;
         }
-        .download-resume a {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #f0e5d8; /* Sandal color */
-            color: #333;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .download-resume a:hover {
-            background: #e0d4c4;
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>D Sujeeth</h1>
-    <p>Cloud Engineer</p>
-</header>
-
-<div class="side-menu">
-    <a href="#about"><i class="fas fa-user"></i> About</a>
-    <a href="#technical-skills"><i class="fas fa-cogs"></i> Technical Skills</a>
-    <a href="#internship"><i class="fas fa-briefcase"></i> Internship</a>
-    <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
-    <a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a>
-    <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-    <a href="#co-curricular"><i class="fas fa-trophy"></i> Co-Curricular</a>
-    <a href="#testimonials"><i class="fas fa-comments"></i> Testimonials</a>
-</div>
-
-<div class="container">
-    <div class="section contact-info">
-        <img src="Formal photo.jpg" alt="Profile Picture" class="profile-pic">
-        <p><i class="fas fa-phone"></i> +91 6382353560</p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:suji.cloud.mfedu@gmail.com">suji.cloud.mfedu@gmail.com</a></p>
-        <p><i class="fas fa-map-marker-alt"></i> Salem, Tamil Nadu</p>
-        <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/dsujeeth">LinkedIn</a> | <i class="fab fa-leetcode"></i> <a href="https://leetcode.com/u/DSujeeth/">Leetcode</a></p>
+    <div class="message">
+        Hi da Naren
     </div>
-
-    <div id="about" class="section about">
-        <h2>About</h2>
-        <p>Self-motivated Electronics and Communication Engineer with a strong foundation in cloud computing, specializing in AWS services like EC2, S3, VPC, and RDS. Proven expertise through certifications and practical projects, including IoT solutions and Docker containerization. Passionate about innovation, actively engaging in technical advancements.</p>
-    </div>
-
-    <div id="technical-skills" class="section technical-skills">
-        <h2>Technical Skills</h2>
-        <div class="skill-graph">
-            <div class="skill">
-                <h3>Cloud Computing <i class="fas fa-cloud"></i></h3>
-                <p>Experienced with AWS services such as EC2 (Elastic Compute Cloud), S3 (Simple Storage Service), VPC (Virtual Private Cloud), and RDS (Relational Database Service). Proficient in setting up and managing cloud infrastructure, deploying scalable applications, and optimizing cloud resources.</p>
-                <div class="progress"><div class="progress-bar" style="width: 90%;"></div></div>
-            </div>
-            <div class="skill">
-                <h3>DevOps <i class="fas fa-tools"></i></h3>
-                <p>Skilled in Docker containerization, including creating and managing Docker images, Dockerfiles, Docker Compose, and Docker Hub. Experienced with Kubernetes orchestration for container management and deployment. Proficient in using DevOps tools to streamline development workflows and automate processes.</p>
-                <div class="progress"><div class="progress-bar" style="width: 80%;"></div></div>
-            </div>
-            <div class="skill">
-                <h3>Python <i class="fab fa-python"></i></h3>
-                <p>Proficient in Python scripting, including knowledge of syntax, control structures, and functions. Experienced in using Boto3 for AWS services, handling data structures and algorithms, and developing Python-based applications and scripts.</p>
-                <div class="progress"><div class="progress-bar" style="width: 85%;"></div></div>
-            </div>
-            <div class="skill">
-                <h3>Embedded Systems <i class="fas fa-microchip"></i></h3>
-                <p>Experienced in microcontroller programming, sensor/actuator interfacing, and embedded C programming. Skilled in using debugging tools and communication protocols like I2C, SPI, and UART for developing and troubleshooting embedded systems.</p>
-                <div class="progress"><div class="progress-bar" style="width: 75%;"></div></div>
-            </div>
-            <div class="skill">
-                <h3>SQL <i class="fas fa-database"></i></h3>
-                <p>Proficient in SQL for database management and querying. Experienced in creating and managing databases, writing complex queries, and optimizing database performance for various applications.</p>
-                <div class="progress"><div class="progress-bar" style="width: 70%;"></div></div>
-            </div>
-            <div class="skill">
-                <h3>Docker <i class="fab fa-docker"></i></h3>
-                <p>Skilled in Docker containerization, including creating and managing Docker images, Dockerfiles, Docker Compose, and Docker Hub. Experienced with Kubernetes orchestration for container management and deployment.</p>
-                <div class="progress"><div class="progress-bar" style="width: 65%;"></div></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="internship" class="section internship">
-        <h2>Internship</h2>
-        <div class="card">
-            <p><i class="fas fa-briefcase"></i> <strong>Embuzz Technologies:</strong> Embedded systems projects</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-briefcase"></i> <strong>Techuc Solutions:</strong> Industrial IoT projects, Sensor integration</p>
-        </div>
-    </div>
-
-    <div id="projects" class="section projects">
-        <h2>Projects</h2>
-        <div class="card">
-            <p><i class="fas fa-lightbulb"></i> <strong>Low Power Cold Storage Systems using IoT:</strong> Designed a low power cold storage system for farmers and vendors (Patent Grant Received)</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-sun"></i> <strong>Solar Concentrated Desalinator using IoT:</strong> Natural water purifier using solar concentration with Fresnel mirrors</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-lightbulb"></i> <strong>Adaptive Street Lights for Smart India:</strong> Energy-efficient street lights using embedded systems</p>
-        </div>
-    </div>
-
-    <div id="certifications" class="section certifications">
-        <h2>Certifications</h2>
-        <div class="card">
-            <p><i class="fas fa-certificate"></i> AWS Cloud - Prepinsta</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-certificate"></i> Linux - ChipEdge</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-certificate"></i> Docker - IBM</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-certificate"></i> Python (Intermediate) - LetsUpgrade</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-certificate"></i> Embedded System - NIEIT (Calicut)</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-certificate"></i> Industrial IoT - NPTEL</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-certificate"></i> Verilog for Design and Verification - ChipEdge</p>
-        </div>
-    </div>
-
-    <div id="education" class="section education">
-        <h2>Education</h2>
-        <div class="card">
-            <p><i class="fas fa-graduation-cap"></i> B.E - ECE: SNS College of Technology, 2021 - 2025, CGPA: 8.73</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-graduation-cap"></i> HSC: Thangam Mount Litera Zee School, 2019 - 2021, SCORE: 81%</p>
-        </div>
-    </div>
-
-    <div id="co-curricular" class="section co-curricular">
-        <h2>Co-Curricular Activities</h2>
-        <div class="card">
-            <p><i class="fas fa-medal"></i> 21+ Seminars</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-trophy"></i> 17+ Paper Presentations (9 winners)</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-question-circle"></i> 7+ Technical Quizzes (4 winners)</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-star"></i> 6+ Non-Technical Events</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-hammer"></i> 4+ Hackathons</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-cogs"></i> One Patent Published</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-heart"></i> Active Member in Red Ribbon Club</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-user-friends"></i> 5 Juniors Guidance Program</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-awareness"></i> 3+ Awareness on HIV (RRC)</p>
-        </div>
-        <div class="card">
-            <p><i class="fas fa-users"></i> Member of SNS Youth Parliament</p>
-        </div>
-    </div>
-
-    <div id="testimonials" class="section testimonials">
-        <h2>Testimonials</h2>
-        <blockquote>
-            <p>"D Sujeeth's dedication and technical expertise are unmatched. His innovative approach to problem-solving has greatly contributed to our projects."</p>
-            <footer>- Colleague</footer>
-        </blockquote>
-        <blockquote>
-            <p>"An exceptional engineer with a strong grasp of cloud technologies and DevOps. Sujeeth's skills have been a tremendous asset to our team."</p>
-            <footer>- Mentor</footer>
-        </blockquote>
-    </div>
-
-    <div class="download-resume">
-        <a href="SujeethResume.pdf" download>Download Resume</a>
-    </div>
-
-    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"><i class="fas fa-chevron-up"></i></button>
-</div>
-
 </body>
 </html>
