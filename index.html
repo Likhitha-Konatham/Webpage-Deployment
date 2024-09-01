@@ -6,36 +6,53 @@
     <title>Message for Pradeep Anna</title>
     <style>
         body {
-            background-color: #f0f8ff;
+            margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
         }
-        .message-box {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        .container {
             text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .message-box h1 {
-            margin: 0;
-            font-size: 24px;
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
         }
-        .message-box p {
-            margin-top: 10px;
-            font-size: 18px;
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div class="message-box">
-        <h1>Hi Pradeep Anna,</h1>
-        <p>This is the newly fetched code!</p>
+    <div class="container">
+        <h1 id="message">Welcome! Click the button to see the message.</h1>
+        <button onclick="fetchMessage()">Fetch Message</button>
     </div>
+    <script>
+        function fetchMessage() {
+            const message = "Hi Pradeep Anna, this is the new fetched code";
+            document.getElementById("message").textContent = message;
+        }
+    </script>
 </body>
 </html>
