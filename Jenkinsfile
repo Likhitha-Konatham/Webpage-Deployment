@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    def image = docker.build("your-image-name:${env.BUILD_ID}")
+                    def image = docker.build("webpage:${env.BUILD_ID}")
                 }
             }
         }
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Run Docker container
-                    docker.image("your-image-name:${env.BUILD_ID}").run('-d -p 8080:80')
+                    docker.image("webpage:${env.BUILD_ID}").run('-d -p 8080:80')
                 }
             }
         }
