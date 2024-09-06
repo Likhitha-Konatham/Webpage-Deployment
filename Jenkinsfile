@@ -1,23 +1,34 @@
 pipeline {
     agent any
+
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/d-Sujeeth/Jenkins-Pipeline.git', branch: 'main'
+                // Pull code from GitHub
+                git 'https://github.com/d-Sujeeth/Jenkins-Pipeline.git'
             }
         }
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Building...'
-                // If you need to perform build steps, add them here
+                script {
+                    // Build Docker image
+                    def image = docker.build("your-image-name:${env.BUILD_ID}")
+                }
             }
         }
-        stage('Deploy') {
+        stage('Run Docker Container') {
             steps {
-                echo 'Deploying...'
-                // Copy the index.html to the Apache web server directory
-                sh 'cp index.html /var/www/html/'
+                script {
+                    // Run Docker container
+                    docker.image("your-image-name:${env.BUILD_ID}").run('-d -p 8080:80')
+                }
             }
+        }
+    }
+
+    post {
+        always {
+            echo 'Cleaning up...'
         }
     }
 }
