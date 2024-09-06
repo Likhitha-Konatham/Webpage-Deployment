@@ -4,22 +4,24 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Pull code from GitHub
-                git 'https://github.com/d-Sujeeth/Jenkins-Pipeline.git'
+                // Clone the repository and checkout the latest code
+                git branch: 'main', url: 'https://github.com/d-Sujeeth/Jenkins-Pipeline.git'
             }
         }
+
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Build Docker image
-                    def image = docker.build("webpage:${env.BUILD_ID}")
+                    // Build Docker image with index.html
+                    def image = docker.build("webpage:${env.BUILD_ID}", ".")
                 }
             }
         }
+
         stage('Run Docker Container') {
             steps {
                 script {
-                    // Run Docker container
+                    // Run Docker container, exposing port 80 for the web server
                     docker.image("webpage:${env.BUILD_ID}").run('-d -p 8080:80')
                 }
             }
@@ -28,7 +30,7 @@ pipeline {
 
     post {
         always {
-            echo 'Cleaning up...'
+            echo 'Pipeline complete!'
         }
     }
 }
