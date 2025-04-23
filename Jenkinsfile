@@ -3,7 +3,6 @@ pipeline {
 
      environment {
         EC2_HOST = "ubuntu@34.192.76.51"
-        DOCKER_IMAGE_NAME = "app"
         DOCKER_TAG = "latest"
         REMOTE_APP_DIR = "/home/ubuntu/app"
     }
@@ -70,7 +69,7 @@ pipeline {
             steps {
                 script {
                     // Run Docker container, exposing port 80 for the web server
-                    docker.image("webpage:${env.BUILD_ID}").run('-d -p 8093:80')
+                    docker.image("webpage:${env.BUILD_ID}").run('-d -p 8094:80')
                 }
             }
         }
