@@ -1,3 +1,3 @@
 FROM nginx:alpine
 
-COPY index.html /home/ubuntu/index.html
+COPY index.html /home/ubuntu/app/index.html
