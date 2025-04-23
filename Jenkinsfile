@@ -70,7 +70,7 @@ pipeline {
             steps {
                 script {
                     // Run Docker container, exposing port 80 for the web server
-                    docker.image("webpage:${env.BUILD_ID}").run('-d -p 8092:80')
+                    docker.image("webpage:${env.BUILD_ID}").run('-d -p 8093:80')
                 }
             }
         }
